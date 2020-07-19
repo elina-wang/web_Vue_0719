@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習vue</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>定義渲染區域</h1>
+    <div id="vue1">
+        {{ text }}
+
+        <h1>
+            {{ text }} 
+        </h1>
+
+        <!-- 數字加數字 做運算 -->
+        {{ a+b }}
+        <!-- 數字加字串 直接添加 -->
+        {{ a+c }}  
+    </div>
+    <!-- 超出渲染區域，無法抓取 -->
+    {{ text }} 
+    <!-- Vue CDN -->
+
+    <!-- 關鍵字v-bind: -->
+    <!-- 屬性不用加大括號{} -->
+    <div id="vue2">
+        <h1 v-bind:align = "alignment">標題一</h1>
+    </div>
+
+    <!-- 判斷式 v-if -->
+    <div id="vue3">
+        <h1>判斷式</h1>
+        <p v-if="text">我是段落文字。</p>
+        <a v-if="activity" href="#">特價中，點我前往！</a>
+        <span v-else="activity">活動結束囉！</span>
+
+    </div>
+    <!-- v-for="變數 in 次數" -->
+    <div id="vue4">
+        <a href="#" v-for="n in 5">連結{{n}}</a>
+
+        <!-- p可以隨意取，但要和下方相同；資料名稱要與JS data相同-->
+        <div v-for="p in products">
+            <h3>{{p.name}}</h3>
+            <h4>價格:{{p.price}} 元</h4>
+            <hr>
+
+        </div>
+
+    </div>
+
+    <div id="vue5">
+        <h2 v-on:click="show">標題二 {{ text }}</h2>
+        <h1>啤酒 {{count}} 箱</h1>
+        <span v-on:click="sub">-</span>
+        <span v-on:click="add">+</span>
+
+        <!-- v-on:click 可以縮減成 @click -->
+        <h2 @click="write">點我 {{ t1 }}</h2>
+
+
+    </div>
+
+    <div id="vue6">
+        <label>請輸入您的姓名：</label><input type="text" v-model=name>
+        <p>{{ name }} 您好：這是您的訂位資訊:</p>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
