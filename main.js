@@ -82,3 +82,36 @@ var vue6 = new Vue ({
     }
     
 });
+
+Vue.component ("test-a", {
+    template:"<h4>這是測試元件</h4>"
+})
+
+var vue7 = new Vue({
+    el: "#vue7"
+})
+
+Vue.component("test-b", {
+    template: ` <h2>我是標題二</h2>
+    <p>段落文字</p>
+    <hr>
+    `
+})
+
+var vue8 = new Vue ({
+    el:"#vue8"
+})
+
+Vue.component("nav-a", {
+    template:` <nav>
+        <a href="#">小說節錄</a>
+        <a href="#">新詩精選</a>
+        <a href="#">散文小品</a>
+
+    </nav>
+    `
+})
+
+var nav = new Vue ({
+    el:"#nav-a"
+})
